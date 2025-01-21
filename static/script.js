@@ -13,7 +13,7 @@ async function predict() {
 
     try {
         const response = await fetch(`${apiUrl}/predict`, {
-            method: 'POST',
+            method: 'POST', // Gunakan metode POST
             body: formData,
         });
 
@@ -23,10 +23,8 @@ async function predict() {
 
         const result = await response.json();
 
-        // Tampilkan hasil prediksi di halaman
+        // Tampilkan hasil prediksi
         document.getElementById('prediction-result').textContent = `Prediction: ${result.prediction}`;
-        document.getElementById('uploaded-image').src = `${apiUrl}/${result.image_path}`;
-        document.getElementById('uploaded-image-container').style.display = 'block';
     } catch (error) {
         console.error(error);
         alert('An error occurred while predicting. Please try again.');
