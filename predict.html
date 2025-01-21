@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshify</title>
+    <link rel="stylesheet" href="./static/style.css"> <!-- Menggunakan relative path -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <h1>Freshify</h1>
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict.html">Predict</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Prediction Container -->
+    <div class="predict-container">
+        <div class="predict-box">
+            <h1>Fresh or Rotten?</h1>
+            <form onsubmit="event.preventDefault(); predict();"> <!-- Form menggunakan JS -->
+                <input type="file" id="file-input" required>
+                <button type="button" onclick="predict()">Upload and Predict</button>
+            </form>
+
+            <h2 id="prediction-result"></h2>
+            <div id="uploaded-image-container" style="display: none;">
+                <img id="uploaded-image" src="" alt="Uploaded Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Tambahkan script.js -->
+    <script src="./static/script.js"></script>
+</body>
+</html>
